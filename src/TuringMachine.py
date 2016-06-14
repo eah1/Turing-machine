@@ -82,22 +82,17 @@ class TuringMachine():
             self.alfabetTape.append( binascii.unhexlify('%x' % b2) )
 
     def __counterZeros( self, config ):
-
         counter = 0
-
         for value in config :
             if value == '0': counter += 1
             else : break
-
         return counter
 
     def __mov( self, number ):
-
         switcher = { 1: "E", 2: "D", 3: "N" }
         return switcher.get(number, "mov")
 
     def machineTuringPrint( self ):
-
         for i in self.transitions:
             print "State " + i
             if len( self.transitions[ i ] ) > 0 :
@@ -193,14 +188,13 @@ def checkInput( opt, MT ):
 
 def opt2( MT ):
 
-    print ""
     print "List states " + str( MT.states )
     print "List alfabet input " + str ( MT.alfabetInput )
-    print "List alfabet tape " + str( list ( set( MT.alfabetTape ) ) )
+    print "List alfabet tape " + str( MT.alfabetTape )
     print "Transitions "
     MT.machineTuringPrint()
     print "State initial " + str( MT.init ) + " State final " + str( MT.final )
-    print ""
+    
 
 def opt3( MT ):
     pass
